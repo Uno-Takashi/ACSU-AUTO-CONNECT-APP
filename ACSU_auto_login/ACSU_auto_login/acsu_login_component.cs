@@ -8,8 +8,7 @@ using System.IO;
 
 namespace ACSU_auto_login
 {
-    class acsu_login_component
-    {
+
         class MyInfo
         {
             public string id;
@@ -45,60 +44,60 @@ namespace ACSU_auto_login
             public Uri After_url = new Uri("https://login.shinshu-u.ac.jp/cgi-bin/Login.cgi");
 
         }
-        class Program
+    public class login
+    {
+        public string result;
+        public login()
         {
-            static void Main(string[] args)
-            {
-                MyInfo myinfo = new MyInfo();
-                myinfo.set_id("15t5801g");
-                myinfo.set_password("tenipuri");
-                string param = "mode=Login&clickcheck=0&login=" + myinfo.get_id() + "&passwd=" + myinfo.get_password();
-                byte[] data = Encoding.ASCII.GetBytes(param);
+            MyInfo myinfo = new MyInfo();
+            myinfo.set_id("15t5801g");
+            myinfo.set_password("tenipuri");
+            string param = "mode=Login&clickcheck=0&login=" + myinfo.get_id() + "&passwd=" + myinfo.get_password();
+            byte[] data = Encoding.ASCII.GetBytes(param);
 
-                ACSU acsu = new ACSU();
+            ACSU acsu = new ACSU();
 
-                CookieContainer cc = new CookieContainer();
-                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(acsu.POST_url.ToString());
-                req.Method = "POST";
-                req.ContentType = "application/x-www-form-urlencoded";
-                req.ContentLength = data.Length;
-                req.CookieContainer = cc;
-                Stream reqStream = req.GetRequestStream();
-                reqStream.Write(data, 0, data.Length);
-                reqStream.Close();
-                //レスポンスの取得
-                WebResponse res = req.GetResponse();
-                Stream resStream = res.GetResponseStream();
+            CookieContainer cc = new CookieContainer();
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(acsu.POST_url.ToString());
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.ContentLength = data.Length;
+            req.CookieContainer = cc;
+            Stream reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            reqStream.Close();
+            //レスポンスの取得
+            WebResponse res = req.GetResponse();
+            Stream resStream = res.GetResponseStream();
 
-                Encoding encoder = Encoding.GetEncoding("UTF-8");
-                StreamReader sr = new StreamReader(resStream, encoder);
-                string result = sr.ReadToEnd();
-                sr.Close();
-                resStream.Close();
+            Encoding encoder = Encoding.GetEncoding("UTF-8");
+            StreamReader sr = new StreamReader(resStream, encoder);
+            string result = sr.ReadToEnd();
+            sr.Close();
+            resStream.Close();
 
-                param = "uid=" + myinfo.get_id() + "&pwd=" + myinfo.get_password();
-                data = Encoding.ASCII.GetBytes(param);
-                //HTTP GET リクエストの作成
-                req = (HttpWebRequest)WebRequest.Create(acsu.After_url.ToString());
-                req.Method = "POST";
-                req.ContentType = "application/x-www-form-urlencoded";
-                req.ContentLength = data.Length;
-                req.CookieContainer = cc;
-                reqStream = req.GetRequestStream();
-                reqStream.Write(data, 0, data.Length);
-                reqStream.Close();
-                //レスポンスの取得
-                res = req.GetResponse();
-                resStream = res.GetResponseStream();
+            param = "uid=" + myinfo.get_id() + "&pwd=" + myinfo.get_password();
+            data = Encoding.ASCII.GetBytes(param);
+            //HTTP GET リクエストの作成
+            req = (HttpWebRequest)WebRequest.Create(acsu.After_url.ToString());
+            req.Method = "POST";
+            req.ContentType = "application/x-www-form-urlencoded";
+            req.ContentLength = data.Length;
+            req.CookieContainer = cc;
+            reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+            reqStream.Close();
+            //レスポンスの取得
+            res = req.GetResponse();
+            resStream = res.GetResponseStream();
 
-                encoder = Encoding.GetEncoding("UTF-8");
-                sr = new StreamReader(resStream, encoder);
-                result = sr.ReadToEnd();
-                sr.Close();
-                resStream.Close();
-                Console.WriteLine(result);
+            encoder = Encoding.GetEncoding("UTF-8");
+            sr = new StreamReader(resStream, encoder);
+            result = sr.ReadToEnd();
+            sr.Close();
+            resStream.Close();
+            this.result = result;
 
-            }
         }
     }
 }

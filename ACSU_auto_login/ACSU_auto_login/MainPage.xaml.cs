@@ -13,5 +13,21 @@ namespace ACSU_auto_login
         {
             InitializeComponent();
         }
+        private void OnClicked(object sender, EventArgs args)
+        {
+            try
+            {
+                ACSU_auto_login.login log = new ACSU_auto_login.login();
+                this.labelHelloWorld.Text = log.result;
+            }
+            catch (Exception)
+            {
+                this.labelHelloWorld.Text = "error";
+
+
+            }
+            
+
+        }
     }
 }

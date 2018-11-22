@@ -1,6 +1,11 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ACSU_auto_login

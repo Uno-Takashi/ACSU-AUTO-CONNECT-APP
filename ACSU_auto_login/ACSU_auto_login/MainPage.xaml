@@ -6,7 +6,8 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Button Text="login" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"></Button>
+        <Button Text="login" VerticalOptions="CenterAndExpand" Clicked="OnClicked"  ></Button>
+        <Label  x:Name="labelHelloWorld" Text="Hello  world"  />
     </StackLayout>
 
 </ContentPage>

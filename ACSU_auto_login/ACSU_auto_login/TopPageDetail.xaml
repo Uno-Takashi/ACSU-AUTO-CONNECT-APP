@@ -5,6 +5,5 @@
              Title="ACSU AUTO CONNECTION">
   <StackLayout Padding="10">
         <Button Text="login" VerticalOptions="CenterAndExpand" Clicked="OnClicked"  ></Button>
-        <Label  x:Name="labelHelloWorld" Text="Hello  world"  />
     </StackLayout>
 </ContentPage>

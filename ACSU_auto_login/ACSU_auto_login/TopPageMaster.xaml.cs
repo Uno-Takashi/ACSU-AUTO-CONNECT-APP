@@ -34,7 +34,7 @@ namespace ACSU_auto_login
                 MenuItems = new ObservableCollection<TopPageMenuItem>(new[]
                 {
                     new TopPageMenuItem { Id = 0, Title = "LOGIN",TargetType=typeof(TopPageDetail) },
-                    new TopPageMenuItem { Id = 1, Title = "SERTTING",TargetType=typeof(SettingPage)  },
+                    new TopPageMenuItem { Id = 1, Title = "SERTTING",TargetType=typeof(SettingPageDetail)  },
 
                 });
             }

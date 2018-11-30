@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ACSU_auto_login
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SettingPage : ContentPage
+	public partial class SettingPageDetail : ContentPage
 	{
-		public SettingPage ()
+		public SettingPageDetail ()
 		{
 			InitializeComponent ();
 		}

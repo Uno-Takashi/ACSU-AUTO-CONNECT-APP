@@ -8,6 +8,7 @@ using Xamarin.Forms;
 
 namespace ACSU_auto_login
 {
+
     public partial class MainPage : ContentPage
     {
         public MainPage()

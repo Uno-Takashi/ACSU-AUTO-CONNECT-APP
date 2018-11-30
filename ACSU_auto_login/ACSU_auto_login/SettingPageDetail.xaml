@@ -4,7 +4,8 @@
              x:Class="ACSU_auto_login.SettingPageDetail">
     <ContentPage.Content>
         <StackLayout>
-            <Entry MaxLength="10" />
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>

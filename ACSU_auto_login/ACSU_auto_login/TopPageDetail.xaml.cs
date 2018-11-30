@@ -22,12 +22,12 @@ namespace ACSU_auto_login
             {
                 ACSU_auto_login.login log = new ACSU_auto_login.login();
 
-                DisplayAlert("タイトル", "CONNECTION SUCCESSFUL", "OK");
+                DisplayAlert("Message", "CONNECTION SUCCESSFUL", "OK");
             }
             catch (Exception)
             {
 
-                DisplayAlert("タイトル", "CONNECTION ERROE", "OK");
+                DisplayAlert("Message", "CONNECTION ERROE", "OK");
 
 
             }

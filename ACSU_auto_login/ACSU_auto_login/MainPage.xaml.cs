@@ -18,11 +18,13 @@ namespace ACSU_auto_login
             try
             {
                 ACSU_auto_login.login log = new ACSU_auto_login.login();
-                this.labelHelloWorld.Text = log.result;
+                this.labelHelloWorld.Text = "success";
+                DisplayAlert("タイトル", "CONNECTION SUCCESSFUL", "OK");
             }
             catch (Exception)
             {
                 this.labelHelloWorld.Text = "error";
+                DisplayAlert("タイトル", "CONNECTION ERROE", "OK");
 
 
             }

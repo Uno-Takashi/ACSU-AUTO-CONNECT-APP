@@ -16,7 +16,7 @@ namespace ACSU_auto_login
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TopPage();
         }
 
         protected override void OnStart()

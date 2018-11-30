@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ACSU_auto_login
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class TopPageDetail : ContentPage
     {
-        public MainPage()
+        public TopPageDetail()
         {
             InitializeComponent();
         }
-        private void OnClicked(object sender, EventArgs args)
+                private void OnClicked(object sender, EventArgs args)
         {
             try
             {

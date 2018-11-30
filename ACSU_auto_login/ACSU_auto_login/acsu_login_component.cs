@@ -47,11 +47,11 @@ namespace ACSU_auto_login
     public class login
     {
         public string result;
-        public login()
+        public login(string id , string password)
         {
             MyInfo myinfo = new MyInfo();
-            myinfo.set_id("15t5801g");
-            myinfo.set_password("tenipuri");
+            myinfo.set_id(id);
+            myinfo.set_password(password);
             string param = "mode=Login&clickcheck=0&login=" + myinfo.get_id() + "&passwd=" + myinfo.get_password();
             byte[] data = Encoding.ASCII.GetBytes(param);
 

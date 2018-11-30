@@ -19,18 +19,30 @@ namespace ACSU_auto_login
         {
             try
             {
-                ACSU_auto_login.login log = new ACSU_auto_login.login();
-                this.labelHelloWorld.Text = "success";
-                DisplayAlert("タイトル", "CONNECTION SUCCESSFUL", "OK");
+                if (Application.Current.Properties.ContainsKey("password") && Application.Current.Properties.ContainsKey("id") && Application.Current.Properties["id"] as string !="" && Application.Current.Properties["password"] as string != "")
+                {
+                    ACSU_auto_login.login log = new ACSU_auto_login.login(Application.Current.Properties["id"] as string, Application.Current.Properties["password"] as string);
+                }
+                else
+                {
+                    throw new WriteException();
+                }
+
+
+                DisplayAlert("Message", "CONNECTION SUCCESSFUL", "OK");
+            }
+            catch (WriteException)
+            {
+                DisplayAlert("Message", "PLEASE WHRITE ID & PASSWORD", "OK");
             }
             catch (Exception)
             {
-                this.labelHelloWorld.Text = "error";
-                DisplayAlert("タイトル", "CONNECTION ERROE", "OK");
+
+                DisplayAlert("Message", "CONNECTION ERROE", "OK");
 
 
             }
-            
+
 
         }
     }

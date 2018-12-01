@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ACSU_auto_login.TopPageDetail"
              Title="ACSU AUTO CONNECTION">
-  <StackLayout Padding="10">
-        <Button Text="login" VerticalOptions="CenterAndExpand" Clicked="OnClicked"  ></Button>
+  <StackLayout >
+
     </StackLayout>
 </ContentPage>

@@ -6,8 +6,7 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Button Text="login" VerticalOptions="CenterAndExpand" Clicked="OnClicked" BorderRadius="45" ></Button>
-        <Label  x:Name="labelHelloWorld" Text="Hello  world"  />
+        <Button VerticalOptions="CenterAndExpand" Clicked="OnClicked" Image="image/acsu.png" ></Button>
     </StackLayout>
 
 </ContentPage>

@@ -157,4 +157,7 @@
       <Name>ACSU_auto_login</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\acsu.png" />
+  </ItemGroup>
 </Project>

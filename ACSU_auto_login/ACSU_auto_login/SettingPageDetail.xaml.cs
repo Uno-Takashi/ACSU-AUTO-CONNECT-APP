@@ -83,7 +83,7 @@ namespace ACSU_auto_login
         {
             Application.Current.Properties["id"] = IdEntry.Text;
             Application.Current.Properties["password"] = PasswordEntry.Text;
-            DisplayAlert(Application.Current.Properties["password"] as string, "Save this setting", "OK");
+            DisplayAlert("Message", "Save this setting", "OK");
 
         }
         private void ResetOnClicked(object sender, EventArgs args)

@@ -17,9 +17,15 @@ namespace ACSU_auto_login
         Entry IdEntry = new Entry { Placeholder = "id" , Margin = new Thickness(0) };
         Entry PasswordEntry = new Entry { Placeholder = "password" ,IsPassword=true};
         Switch BackgroundEntry = new Switch {  };
-    public SettingPageDetail()
+        SwitchCell BackgroundCell = new SwitchCell { };
+        SwitchCell SuccessCell = new SwitchCell { };
+
+        public SettingPageDetail()
         {
             InitializeComponent();
+
+            // button
+
             Button SaveButton = new Button
             {
                 Text = "SAVE",
@@ -34,6 +40,8 @@ namespace ACSU_auto_login
             ResetButton.BackgroundColor = Color.FromRgb(255, 120, 120);
             ResetButton.Clicked += ResetOnClicked;
 
+            //label
+
             var baselabel = new Label { Text = "", LineHeight = 0 ,Margin=new Thickness(0) };
             baselabel.Style = Device.Styles.TitleStyle;
 
@@ -44,6 +52,8 @@ namespace ACSU_auto_login
             BaseSettingLabel.Style = Device.Styles.TitleStyle;
             BaseSettingLabel.Text = "Base Setting";
 
+            // text field
+
             if (Application.Current.Properties.ContainsKey("id"))
             {
                 IdEntry.Text = Application.Current.Properties["id"] as string;
@@ -53,12 +63,30 @@ namespace ACSU_auto_login
                 PasswordEntry.Text = Application.Current.Properties["password"] as string;
             }
 
+            // switch
+            BackgroundCell.Text = "Background";
+            BackgroundCell.OnChanged += BackgroundCellTapped;
+            if (Application.Current.Properties.ContainsKey("background"))
+            {
+                BackgroundCell.On = (bool)Application.Current.Properties["background"];
+            }
+
+            SuccessCell.Text = "Do Not Show Successful Message";
+            if (Application.Current.Properties.ContainsKey("success"))
+            {
+                SuccessCell.On = (bool)Application.Current.Properties["success"];
+            }
+
+
+
+
             TableView table = new TableView
             {
                 Root = new TableRoot {
 
-                    new TableSection ("Setting") {
-                    
+                    new TableSection () {
+                       BackgroundCell,
+                       SuccessCell
                     },
                 },
                 Intent = TableIntent.Settings
@@ -83,6 +111,7 @@ namespace ACSU_auto_login
                     IdEntry,
                     PasswordEntry,
                     BaseSettingLabel,
+                    table,
                     //BackgroundEntry,
                     buttonstack
 
@@ -95,6 +124,8 @@ namespace ACSU_auto_login
         {
             Application.Current.Properties["id"] = IdEntry.Text;
             Application.Current.Properties["password"] = PasswordEntry.Text;
+            Application.Current.Properties["background"] = BackgroundCell.On;
+            Application.Current.Properties["success"] = SuccessCell.On;
             DisplayAlert("Message", "Save this setting", "OK");
 
         }
@@ -110,7 +141,20 @@ namespace ACSU_auto_login
             {
                 Application.Current.Properties["password"] = "";
             }
+            if (Application.Current.Properties.ContainsKey("background"))
+            {
+                Application.Current.Properties["background"] = false;
+            }
+            BackgroundCell.On = false;
+            if (Application.Current.Properties.ContainsKey("success"))
+            {
+                Application.Current.Properties["success"] = false;
+            }
+            SuccessCell.On = false;
 
+        }
+
+        private void BackgroundCellTapped (object sender , EventArgs args){
         }
     }
 

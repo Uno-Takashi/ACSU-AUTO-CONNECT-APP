@@ -128,8 +128,21 @@ namespace ACSU_auto_login
                     throw new WriteException();
                 }
 
+                if (Application.Current.Properties.ContainsKey("success"))
+                {
+                    if ((bool)Application.Current.Properties["success"])
+                    {
 
-                DisplayAlert("Message", "CONNECTION SUCCESSFUL", "OK");
+                    }
+                    else
+                    {
+                        DisplayAlert("Message", "CONNECTION SUCCESSFUL", "OK");
+                    }
+                }
+                else
+                {
+                    DisplayAlert("Message", "CONNECTION SUCCESSFUL", "OK");
+                }
             }
             catch (WriteException)
             {

@@ -14,7 +14,7 @@ namespace ACSU_auto_login
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingPageDetail : ContentPage
 	{
-        Entry IdEntry = new Entry { Placeholder = "id" };
+        Entry IdEntry = new Entry { Placeholder = "id" , Margin = new Thickness(0) };
         Entry PasswordEntry = new Entry { Placeholder = "password" ,IsPassword=true};
         Switch BackgroundEntry = new Switch {  };
     public SettingPageDetail()
@@ -33,6 +33,16 @@ namespace ACSU_auto_login
             };
             ResetButton.BackgroundColor = Color.FromRgb(255, 120, 120);
             ResetButton.Clicked += ResetOnClicked;
+
+            var baselabel = new Label { Text = "", LineHeight = 0 ,Margin=new Thickness(0) };
+            baselabel.Style = Device.Styles.TitleStyle;
+
+            var accountlabel = new Label { Text = "", LineHeight = 0, Margin = new Thickness(0) };
+            accountlabel.Style=Device.Styles.TitleStyle;
+            accountlabel.Text = "Account";
+            var BaseSettingLabel = new Label { Text = "", LineHeight = 0, Margin = new Thickness(0) };
+            BaseSettingLabel.Style = Device.Styles.TitleStyle;
+            BaseSettingLabel.Text = "Base Setting";
 
             if (Application.Current.Properties.ContainsKey("id"))
             {
@@ -69,8 +79,10 @@ namespace ACSU_auto_login
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Children = {
+                    accountlabel,
                     IdEntry,
                     PasswordEntry,
+                    BaseSettingLabel,
                     //BackgroundEntry,
                     buttonstack
 

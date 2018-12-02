@@ -17,6 +17,8 @@ namespace ACSU_auto_login
             InitializeComponent();
 
             MainPage = new TopPage();
+            MainPage.SetValue(NavigationPage.BarBackgroundColorProperty, Color.Black);
+            MainPage.SetValue(NavigationPage.BarTextColorProperty, Color.White);
         }
 
         protected override void OnStart()

@@ -1,3 +1,5 @@
+<!-- page_number: true -->
+
 # C# デモプログラム発表会
 ## 15t5801g 宇野 貴士
 
@@ -57,3 +59,5 @@ IOSでもAndroidでもWindowsでも使いたい
 
 ----
 
+# Layout
+![center 70%](drowchart.png)

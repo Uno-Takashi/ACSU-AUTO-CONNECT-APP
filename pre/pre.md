@@ -41,21 +41,25 @@ IOSでもAndroidでもWindowsでも使いたい
 # Goal
 * ワンクリックでACSUにログインするためのアプリケーションの開発
 * 出来ればバックグラウンドで勝手にログインしていてほしい
-* マルチプラットフォームで動作し、それぞれのプラットフォーム毎のソースは最小限にしたい
+	* Android 8から廃止されていた・・・
+* マルチプラットフォームで動作させたい
 * C#は使わなくてはならない
 <div style="text-align:center;font-size:55px;">
   ↓
 </div>
-<div style="text-align:center;font-size:35px;color:red">
-  Xamarinを使ってACSU自動ログインアプリを作る
+<div style="text-align:center;font-size:33px;color:red">
+  Xamarinを使ってACSU自動ログインアプリを作ればいい
  </div>
  
 ----
+![bg center 25%](logo.png)
 
-# Xamarinって？
-* microsoftによって買収された企業及び開発しているフレームワーク
+# Xamarinって？ 
+* Microsoftによって買収された企業及び開発しているフレームワーク
 * クロスプラットフォーム対応(IOS,Android,UWP)
-* Visual Studioが公式サポートをしており、面倒なモバイルアプリの開発環境を容易に作り出すことができる
+* Xamarin.Formsというプラットフォーム間で共通のコードを作れる
+* Visual Studioが公式サポートをしており、モバイルアプリの開発環境を容易に作り出すことができる
+* MacなしでIPhoneのデバッグができる(xamarin live player)
 
 ----
 

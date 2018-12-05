@@ -77,7 +77,7 @@ namespace ACSU_auto_login.Droid
             {
                 while (true)
                 {
-                    System.Threading.Thread.Sleep(100 * 1);
+                    System.Threading.Thread.Sleep(1000 * 60);
                     var bundle = new Bundle();
                     global::Xamarin.Forms.Forms.Init(this, bundle);
                     if (Xamarin.Forms.Application.Current.Properties.ContainsKey("background"))
@@ -167,19 +167,7 @@ namespace ACSU_auto_login.Droid
                       Intent.ActionMyPackageReplaced　//,
                       //Intent.ActionPackageReplaced
 })]
-    public class BootReceiver : BroadcastReceiver
-    {
-        public BootReceiver() : base()
-        {
-        }
-        public override void OnReceive(Context context, Intent intent)
-        {
-            Intent serviceIntent = new Intent(context, typeof(BackgroundService));
-            serviceIntent.AddFlags(ActivityFlags.NewTask);
-            serviceIntent.SetPackage(context.PackageManager.GetPackageInfo(context.PackageName, 0).PackageName);
-            context.StartService(serviceIntent);
-        }
-    }
+
 
     [Service(Name= "com.companyname.ACSU_auto_login.ConnectService")]
     public class ConnectService : IntentService
@@ -240,7 +228,7 @@ namespace ACSU_auto_login.Droid
             while (true)
             {
                 System.Diagnostics.Debug.WriteLine("----done----");
-                System.Threading.Thread.Sleep(100 * 1);
+                System.Threading.Thread.Sleep(1000 * 1);
 
                 if (Xamarin.Forms.Application.Current.Properties.ContainsKey("background"))
                 {

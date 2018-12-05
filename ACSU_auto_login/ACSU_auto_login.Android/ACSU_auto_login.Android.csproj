@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackgroundAndroid.cs" />
+    <Compile Include="BootReceiver.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="NotificationService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

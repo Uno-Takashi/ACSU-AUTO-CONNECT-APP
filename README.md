@@ -1,2 +1,2 @@
 # ACSU-AUTO-CONNECT-APP
-acsu auto connect app using xamarin
+信州大学のACSUに自動的にログインするためのクロスプラットフォームアプリ。Android、Windows、IOSに対応し、現状Androidのみバックグラウンド処理による。自動ログインが可能。ほかのプラットフォームに関してはアプリ起動後タップによってログインが可能。

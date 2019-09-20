@@ -24,7 +24,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="ACSU AUTO CONNECTION"
+              Text="ACSU EASY CONNECTION"
               FontSize="18"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>

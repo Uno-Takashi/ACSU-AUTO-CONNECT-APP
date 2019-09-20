@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.ACSU_auto_login" android:installLocation="internalOnly">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-    <application android:label="ACSU_auto_login.Android"></application>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-  <uses-permission android:name="android.permission.WAKE_LOCK" />
-<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="acsu_easy_login.acsu_easy_login" android:installLocation="auto">
+	<uses-sdk android:targetSdkVersion="28" android:minSdkVersion="21" />
+	<application android:label="ACSU EASY LOGIN" android:icon="@mipmap/icon"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 </manifest>

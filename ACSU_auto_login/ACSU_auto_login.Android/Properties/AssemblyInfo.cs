@@ -13,6 +13,7 @@ using Android.App;
 [assembly: AssemblyProduct("ACSU_auto_login.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
+[assembly: Application(Debuggable = false)]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 

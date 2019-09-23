@@ -9,6 +9,14 @@
 このプロジェクトはvisual studio 2019にて開発を行っており、ビルドはソリューションファイルを読み込むことで容易に行うことができます。SDKはAPIレベル28をターゲットとします。
 このプロジェクトはIOS、UWP、Androidの３プラットフォームがあり、ひとまずすべてのプラットフォームでタップによるログインが可能。バックグラウンドログインに関してはAndroid版でのみ絶賛開発中。
 
+## インストール
+
+android版に関しては次のQRコード、またはURLからPlay Storeからダウンロードするかリポジトリ内になるapkファイルを直接ダウンロードすることでもインストールすることが可能です。
+
+![qr20190923223402145](https://user-images.githubusercontent.com/32987034/65430145-6124d880-de52-11e9-9662-44a91de9d3b8.png)
+
+https://play.google.com/store/apps/details?id=acsu_easy_login.acsu_easy_login
+
 ## 使い方
 
 Android版について解説を行いますが、ほかのバージョンも同様に行うことができます。
